@@ -1,0 +1,32 @@
+\AtBeginSection{\frame{\sectionpage}}
+
+\defbeamertemplate{section page}{mine}[1][]{%
+  \begin{centering}
+    {\usebeamerfont{section name}\usebeamercolor[fg]{section name}#1}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+  \end{centering}
+}
+\setbeamertemplate{section page}[mine]
+
+\usepackage{pgfplots}
+
+\title{High Pressure Ignition Chemistry of Alternative Fuels}
+\author{Bryan W. Weber}
+\institute{Prepared for Ph.D. Defense}
+\date{June 19, 2014}
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{footline}
+{%
+\begin{beamercolorbox}[sep=2mm]{}
+\includegraphics[height=0.25in]{logo}
+\hfill
+{\color{gray} \insertpagenumber{}/\insertpresentationendpage}
+\end{beamercolorbox}
+}%
+
+\graphicspath{ {figures/} }
