@@ -60,4 +60,50 @@ John Dec image
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Combustion models are hierarchical}
+    \only<1>{
+    \begin{columns}[b]
+        \column{0.65\textwidth}
+            \begin{itemize}
+                \item In this, ``combustion models'' = ``kinetic models'' = ``reaction mechanisms''
+                \item Combustion chemistry is important! Studied since at least the advent of IC engines to understand knock; later for emissions and pollutants.
+                \item Need to ensure that the models for small molecules are thoroughly validated when including them in models for large molecules
+                \item A number of research efforts (past and present) have focused on this goal
+            \end{itemize}
+        \column{0.35\textwidth}
+            \begin{tikzpicture}
+                \node[fill=blue,text=white,rectangle] at (0,0) {H$_2$, CO};
+            \end{tikzpicture}
+    \end{columns}
+    }
+    \only<2>{
+    \begin{columns}[b]
+        \column{0.65\textwidth}
+            \begin{itemize}
+                \item Model validation for larger molecule combustion must proceed in parallel to the small molecule chemistry because the models are needed now!
+                \item Validation data for alcoholic alternative fuels has focused on the isomers of butanol (C4 alcohols) and i-pentanol (C5 alcohol)
+            \end{itemize}
+    \end{columns}
+    }
+    \only<3>{
+    \begin{columns}[b]
+        \column{0.65\textwidth}
+            \begin{itemize}
+                \item Models can predict the combustion of alcohols well for a variety conditions
+                \item Models fail to predict certain engine relevant conditions, such as ignition delay dependence on [O2]
+            \end{itemize}
+    \end{columns}
+    }
+    \only<4>{
+    \begin{columns}[b]
+        \column{0.65\textwidth}
+            \begin{itemize}
+                \item Models of real transportation fuels are difficult to construct and use due to the chemical complexity of the fuels
+                \item Surrogate models use a limited number of components to represent the chemical and physical properties of the real fuel
+                \item Models need to be developed and validated for the neat components as well as for their blends
+            \end{itemize}
+    \end{columns}
+    }
+\end{frame}
+
 \end{document}
