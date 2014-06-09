@@ -1,6 +1,6 @@
 % arara: lualatex
 \documentclass{beamer}
-
+\input{preamble.tex}
 \begin{document}
 
 \maketitle
@@ -34,20 +34,28 @@ John Dec image
 
 \begin{frame}{Better fuels reduce emissions and eliminate dependence on fossil fuels}
     \begin{center}
-        \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{butanol-benefits.png}
-        % \begin{tikzpicture}
-        % \begin{axis}[
-            % ybar,
-            % scaled y ticks=false,
-            % ymin=0,ymax=140000,
-            % ytick={0,20000,40000,60000,80000,100000,120000,140000},
-            % yticklabel style={/pgf/number format/fixed},
-            % xticklabels={{Butanol\\(Case 3)}, {Ethanol Dry\\Mill (Case 6)}, {Butanol\\(Case 2)}, {Butanol\\(Case 4)}, {Ethanol Dry\\Mill (Case 5)}, {Gasoline\\(Case 1)}},
-            % xticklabel style={align=center}
-        % ]
-        % \addplot coordinates {(1,65000) (2,42000) (3,50000) (4,132000) (5,75000) (6,98000)};
-        % \end{axis}
-        % \end{tikzpicture}
+        % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{butanol-benefits}
+        \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            scaled y ticks=false,
+            ymin=0,ymax=150000,
+            ytick={0,20000,40000,60000,80000,100000,120000,140000},
+            yticklabel style={/pgf/number format/fixed},
+            xtick={1,2,3,4,5,6},
+            xticklabels={{Butanol\\(Case 3)}, {Ethanol, Dry\\Mill (Case 6)}, {Butanol\\(Case 2)}, {Butanol\\(Case 4)}, {Ethanol, Dry\\Mill (Case 5)}, {Gasoline\\(Case 1)}},
+            xticklabel style={align=center,font=\tiny},
+            ymajorgrids,
+            ylabel={WTW GHG Emissions\\(gCO$_2$ equivalent GHG/million)},
+            ylabel style={align=center,yshift=25pt},
+        ]
+        \addplot coordinates {(1,65000) (2,42000) (3,50000) (4,132000) (5,75000) (6,98000)};
+        \node[fill=white] at (axis cs:1,75000) {32\%};
+        \node[fill=white] at (axis cs:3,60000) {48\%};
+        \node[fill=white] at (axis cs:4,140000) {-35\%};
+        \node[fill=white, anchor=north west, align=left] at (axis cs:1,135000) {Reduction\\relative to\\baseline};
+        \end{axis}
+        \end{tikzpicture}
     \end{center}
 \end{frame}
 
@@ -55,7 +63,7 @@ John Dec image
     \begin{itemize}
         \item Neither solution will be able to mitigate all of the negative impacts of combustion by itself
         \item Selecting the “best” alternative fuel requires knowledge of the “best” engine, which depends on which alternative fuel is selected…
-        \item Computer-aided design and modeling can be employed to make new engines fuel-flexible \alert{if} we have good models
+        \item Computer-aided design and modeling can be employed to make new engines fuel-flexible \alert{if we have good models}
         \item Models must be validated with experimental data acquired under engine-relevant conditions
     \end{itemize}
 \end{frame}
