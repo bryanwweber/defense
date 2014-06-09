@@ -12,6 +12,9 @@
 \setbeamertemplate{section page}[mine]
 
 \usepackage{pgfplots}
+\usetikzlibrary{decorations.pathreplacing,calc}
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \coordinate (#1);}
 
 \beamertemplatenavigationsymbolsempty
 

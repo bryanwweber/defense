@@ -94,6 +94,28 @@ John Dec image
     \end{itemize}
 \end{frame}
 
+\begin{frame}{What tools can combustion research use?}
+    \hspace{6cm} \tikzmark{right}
+    \begin{itemize}
+        \item<1-> Experiments \tikzmark{2nd}
+        \begin{itemize}[<2->]
+            \item Homogeneous experiments
+            \item Heterogeneous experiments
+        \end{itemize}
+        \item<1->Modeling
+        \begin{itemize}[<3->]
+            \item Quantum chemical modeling
+            \item Reaction mechanisms
+                \tikzmark{4th}
+        \end{itemize}
+    \end{itemize}
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw<4->[decoration={brace,amplitude=0.5em},decorate,ultra thick,red]
+ ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$);
+        \path<4-> ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$) node[midway,align=left,anchor=west,red,xshift=0.25cm] {These efforts\\are complementary!};
+    \end{tikzpicture}
+\end{frame}
+
 \begin{frame}{We need both solutions to make substantial progress}
     \begin{itemize}
         \item Neither solution will be able to mitigate all of the negative impacts of combustion by itself
