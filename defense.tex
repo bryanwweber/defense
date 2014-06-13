@@ -143,7 +143,53 @@ John Dec image
             Until 2011, no one was aware that low-temperature chemistry would
             be important for alcohol fuels!
         }
-        \only<2>{
+    \end{center}
+\end{frame}
+
+\begin{frame}{What is low-temperature chemistry?}
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{semilogyaxis}[
+        table/col sep=comma,
+        ylabel style={align=center,yshift=-15pt},
+        xlabel style={align=center,yshift=15pt},
+        ylabel={Reactivity\\$\leftarrow$Higher\qquad\qquad Lower$\rightarrow$},
+        xlabel={$\leftarrow$Higher\qquad\qquad Lower$\rightarrow$\\Temperature},
+        yticklabels={,,},
+        xticklabels={,,},
+        xmin=0.7,xmax=1.5,
+        ymin=0.02,ymax=200,
+        tick style = {color=black, semithick},
+        minor tick style={thin},
+        axis line style={semithick},
+        every axis plot/.append style={%
+            semithick,
+        },
+        every axis legend/.append style={legend pos=south east,anchor=south east,font=\tiny},
+        legend columns=1,
+    ]
+    \only<1->{\addplot[mark=*,blue,only marks,restrict x to domain=0.7:1.15] table[x=Alcohol-Tc, y=Alcohol-Ign] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{High Temperature Alcohol}}
+    \only<2-6>{\addplot[only marks,mark=square*,red] table[x=Hi-T-Real-Tc, y=Hi-T-Real-Ign] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{High Temperature Alkane}}
+    \only<3-6>{\addplot[no markers,cyan] table[x=Hi-T-Alc-Tc, y=Hi-T-Alc-Mod] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{High Temperature Model}}
+    \only<4->{\addplot[only marks,mark=oplus*,violet,restrict x to domain=1.15:1.5] table[x=Alcohol-Tc, y=Alcohol-Ign] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{Low Temperature Alcohol}}
+    \only<5-6>{\addplot[only marks,mark=diamond*,black] table[x=Lo-T-Real-Tc, y=Lo-T-Real-Ign] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{Low Temperature Alkane}}
+    \only<6>{\addplot[no markers,orange] table[x=Real-Mod-Tc, y=Real-Mod-Ign] {figures/alcohol-models/model-data.csv};
+    \addlegendentry{Comprehensive Alkane Model}}
+    \only<7->{\addplot[no markers,domain=0.8:1.4,gray] {1.4097*x^12.714};
+    \addlegendentry{Comprehensive Alcohol Model}}
+    \end{semilogyaxis}
+    \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{What problem am I trying to solve?}
+    \begin{center}
+        \only<1>{
             \includegraphics[height=0.8\textheight]{nbuoh-2014/nbuoh-2014}\\
             With low-temperature reaction classes added, models can
             better predict the ignition delay.
