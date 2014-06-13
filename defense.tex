@@ -95,24 +95,44 @@ John Dec image
 \end{frame}
 
 \begin{frame}{What tools can combustion research use?}
-    \hspace{6cm} \tikzmark{right}
+    \vspace{0.5cm}
+    \begin{columns}
+        \column{0.5\textwidth}<1->
+            Phenomenological Studies
+            \begin{itemize}
+                \item Engine Studies
+                \item Octane Number
+                \item \ldots
+            \end{itemize}
+        \column{0.5\textwidth}<2->
+            Fundamental Studies
+            \begin{itemize}
+                \item Ignition Delay
+                \item Product Speciation
+                \item \ldots
+            \end{itemize}
+    \end{columns}
+    \vspace{0.5cm}
+    \hspace{6.25cm} \tikzmark{right}
     \begin{itemize}
-        \item<1-> Experiments \tikzmark{2nd}
-        \begin{itemize}[<2->]
+        \item<3-> Experiments \tikzmark{2nd}
+        \begin{itemize}[<4->]
+            \item Engine experiments
             \item Homogeneous experiments
             \item Heterogeneous experiments
         \end{itemize}
-        \item<1->Modeling
-        \begin{itemize}[<3->]
+        \item<3->Modeling
+        \begin{itemize}[<5->]
             \item Quantum chemical modeling
             \item Reaction mechanisms
+            \item Computational fluid dynamics
                 \tikzmark{4th}
         \end{itemize}
     \end{itemize}
     \begin{tikzpicture}[overlay, remember picture]
-        \draw<4->[decoration={brace,amplitude=0.5em},decorate,ultra thick,red]
+        \draw<6->[decoration={brace,amplitude=0.5em},decorate,ultra thick,red]
  ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$);
-        \path<4-> ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$) node[midway,align=left,anchor=west,red,xshift=0.25cm] {These efforts\\are complementary!};
+        \path<6-> ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$) node[midway,align=left,anchor=west,red,xshift=0.25cm] {These efforts\\are complementary!};
     \end{tikzpicture}
 \end{frame}
 
