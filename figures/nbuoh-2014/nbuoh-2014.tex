@@ -1,0 +1,58 @@
+% arara: pdflatex
+\input{../figure-preamble.tex}
+\pgfplotsset{
+    every axis/.append style={%
+        scale only axis,
+        xmin=1.18, xmax=1.40,
+        ymin=5, ymax=600,
+    },
+}
+\pgfplotscreateplotcyclelist{buoh}{%
+    only marks,mark=*,black,legend image post style={dashed,sharp plot,mark options=solid}\\%
+    no markers,solid,violet\\%
+    no markers,solid,darkgreen\\%
+    no markers,dashed,black\\%
+}
+\begin{document}
+\begin{tikzpicture}
+\begin{semilogyaxis}[
+    ylabel={Ignition Delay, \si{\milli\second}},
+    xlabel={1000/$T_C$, \si{\per\kelvin}},
+    ytickten={0,1,2,3,4,5},
+    log ticks with fixed point,
+    minor x tick num=4,
+    minor y tick num=8,
+    every axis legend/.append style={
+        at={(axis cs:1.39,6)},
+        anchor=south east,
+    },
+    axis x line*=bottom,
+    cycle list name=buoh,
+    table/x=1000/Tc,
+]
+\addplot table[y=Tig] {nbuoh-data.txt};
+\addplot table[y=MIT-New] {nbuoh-data.txt};
+\addplot table[y=Vpro] {nbuoh-data.txt};
+\addplot table[y={create col/linear regression={y=Tig}}] {nbuoh-data.txt};
+\legend{{Weber et al.\ (2011)},{Harper et al.\ (2010)},{Sarathy et al.\ (2012)}}
+\end{semilogyaxis}
+\deflisttick{700,750,...,900}{10}
+\edef\temp{%
+  \noexpand\pgfplotsset{%
+      x tick labels list/.style={xticklabels={\listlabels}}
+  }%
+}
+\temp
+\begin{semilogyaxis}[
+    title style={yshift=7pt},
+    title={\textit{n}-Butanol/O$_2$/N$_2$, $\phi=1.0$, $P_C=\SI{15}{\bar}$},
+    axis y line=none,
+    axis x line*=top,
+    xtick={\listticks},
+    x tick labels list,
+    minor xtick ={\minorticks}
+]
+% \node at (axis cs:1.33,18) {O$_2$ : N$_2$ = 1 : 3.76};
+\end{semilogyaxis}
+\end{tikzpicture}
+\end{document}
