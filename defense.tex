@@ -97,14 +97,17 @@ John Dec image
 
 \begin{frame}{What tools can combustion research use?}
     \vspace{0.5cm}
+    \only<3->{\setbeamercovered{transparent=15}}
     \begin{columns}
-        \column{0.5\textwidth}<1->
+        \uncover<1,2>{
+        \column{0.5\textwidth}
             Phenomenological Studies
             \begin{itemize}
                 \item Engine Studies
                 \item Octane Number
                 \item \ldots
             \end{itemize}
+        }
         \column{0.5\textwidth}<2->
             Fundamental Studies
             \begin{itemize}
@@ -117,13 +120,13 @@ John Dec image
     \hspace{6.25cm} \tikzmark{right}
     \begin{itemize}
         \item<3-> Experiments \tikzmark{2nd}
-        \begin{itemize}[<4->]
+        \begin{itemize}[<4- | invisible@-3>]
             \item Engine experiments
             \item Homogeneous experiments
             \item Heterogeneous experiments
         \end{itemize}
         \item<3->Modeling
-        \begin{itemize}[<5->]
+        \begin{itemize}[<5- | invisible@-4>]
             \item Quantum chemical modeling
             \item Reaction mechanisms
             \item Computational fluid dynamics
