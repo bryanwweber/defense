@@ -122,21 +122,21 @@ John Dec image
         \item<3-> Experiments \tikzmark{2nd}
         \begin{itemize}[<4- | invisible@-3>]
             \item Engine experiments
-            \item Homogeneous experiments
+            \item \alert<7>{Homogeneous experiments}
             \item Heterogeneous experiments
         \end{itemize}
         \item<3->Modeling
         \begin{itemize}[<5- | invisible@-4>]
             \item Quantum chemical modeling
-            \item Reaction mechanisms
+            \item \alert<7>{Reaction mechanisms}
             \item Computational fluid dynamics
                 \tikzmark{4th}
         \end{itemize}
     \end{itemize}
     \begin{tikzpicture}[overlay, remember picture]
-        \draw<6->[decoration={brace,amplitude=0.5em},decorate,ultra thick,red]
+        \draw<6>[decoration={brace,amplitude=0.5em},decorate,ultra thick,red]
  ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$);
-        \path<6-> ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$) node[midway,align=left,anchor=west,red,xshift=0.25cm] {These efforts\\are complementary!};
+        \path<6> ($(right)!(2nd.north)!($(right)-(0,1)$)$) --  ($(right)!(4th.south)!($(right)-(0,1)$)$) node[midway,align=left,anchor=west,red,xshift=0.25cm] {These efforts\\are complementary!};
     \end{tikzpicture}
 \end{frame}
 
