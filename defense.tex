@@ -302,32 +302,62 @@ John Dec image
     \end{columns}
 \end{frame}
 
-\begin{frame}{My work has lead to substantial improvements in models for hydrocarbons}
+\section{Results, Methylcyclohexane}
+
+\begin{frame}{Methylcyclohexane ignition}
     \begin{columns}
         \only<+>{
             \column{0.5\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{mittal-mch}\par
                 Mittal et al.\ Combust. Flame 2009
-            \column{0.5\textwidth}<.>
+            \column{0.5\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{mch-model-1/mch-model-1}\par
                 Weber et al.\ Combust. Flame 2014
         }
     \end{columns}
-    \begin{center}
-        \includegraphics<+>[height=0.85\textheight]{mch-energy}
-    \end{center}
+    % \begin{center}
+        % \includegraphics<+>[height=0.85\textheight]{mch-energy}
+    % \end{center}
 \end{frame}
 
 \begin{frame}{Sampling results}
-    \begin{columns}
-        \column{0.5\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]{mch-mole-fracs}
-        \column{0.5\textwidth}
-            \includegraphics[width=\textwidth]{mchene-mole-fracs}
-    \end{columns}
+    \begin{center}
+        \includegraphics<1>[height=0.95\textheight]{rsa-pressure}
+        \only<2-6>{
+        \begin{columns}[T]
+            \column{0.8\textwidth}
+                \includegraphics<2>[height=0.95\textheight]{mch-tic/mch-tic-1}
+                \includegraphics<3>[height=0.95\textheight]{mch-tic/mch-tic-2}
+                \includegraphics<4>[height=0.95\textheight]{mch-tic/mch-tic-3}
+                \includegraphics<5>[height=0.95\textheight]{mch-tic/mch-tic-4}
+                \includegraphics<6>[height=0.95\textheight]{mch-tic/mch-tic-5}
+            \column{0.2\textwidth}
+                \only<2-3>{\tikzmark{mch}\includegraphics[height=0.15\textheight]{mch-skeletal}\par}
+                \only<3>{\tikzmark{mchene-2}\includegraphics[height=0.15\textheight]{mchene-2}\par}
+                \only<3>{\tikzmark{mchene-3}\includegraphics[height=0.15\textheight]{mchene-3}\par}
+                \only<3>{\tikzmark{menech}\includegraphics[height=0.15\textheight]{menech}\par}
+                \only<3>{\tikzmark{mchene-1}\includegraphics[height=0.15\textheight]{mchene-1}}
+                \only<4>{\tikzmark{2-propenal}\includegraphics[height=0.15\textheight]{2-propenal}\par}
+                \only<4>{\tikzmark{mac}\includegraphics[height=0.15\textheight]{methacrolein}\par}
+                \only<4>{\tikzmark{mvk}\includegraphics[height=0.15\textheight]{methyl-vinyl-ketone}}
+        \end{columns}
+        \begin{tikzpicture}[overlay,remember picture,->,ultra thick]
+        \draw<2-3> ($(mch)+(0,0.5)$) --      (0.3,7.3);
+        \draw<3> ($(mchene-2)+(0,0.25)$) -- (0.75,3);
+        \draw<3> ($(mchene-3)+(0,0.25)$) -- (0.85,3);
+        \draw<3> ($(menech)+(0,0.25)$) --   (1,1.9);
+        \draw<3> ($(mchene-1)+(0,0.5)$) -- (2.4,2);
+        \draw<4> ($(2-propenal)$) -- (-3.9,3);
+        \draw<4> ($(mac)$) -- (-3.4,2);
+        \draw<4> ($(mvk)$) -- (-3.2,2);
+        \end{tikzpicture}
+        }
+        \includegraphics<7>[height=0.95\textheight]{mch-sim-pres-comp}
+        \only<8>{Methylcyclohexane}\par\includegraphics<8>[height=0.85\textheight]{mch-mole-fracs}
+        \only<9>{Methylcyclohexenes}\par\includegraphics<9>[height=0.85\textheight]{mchene-mole-fracs}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Summary}
