@@ -140,9 +140,10 @@ John Dec image
     \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{What problem am I trying to solve?}
+\begin{frame}{What phenomena am I trying to understand?}
     \begin{center}
-        \only<1>{
+        \only<+>{{\Large How do alternative fuels react at engine-relevant conditions?}}
+        \only<+>{
             \includegraphics[height=0.8\textheight]{nbuoh-2010/nbuoh-2010}\\
             Until 2011, no one was aware that low-temperature chemistry would
             be important for alcohol fuels!
@@ -176,7 +177,7 @@ John Dec image
     \addlegendentry{High Temperature Alcohol}}
     \only<2-6>{\addplot[only marks,mark=square*,red] table[x=Hi-T-Real-Tc, y=Hi-T-Real-Ign] {figures/alcohol-models/model-data.csv};
     \addlegendentry{High Temperature Alkane}}
-    \only<3-6>{\addplot[no markers,cyan] table[x=Hi-T-Alc-Tc, y=Hi-T-Alc-Mod] {figures/alcohol-models/model-data.csv};
+    \only<3-6>{\addplot[no markers,cyan] table[x=Hi-T-Alc-Tc, y expr=\thisrow{Hi-T-Alc-Mod}*0.75] {figures/alcohol-models/model-data.csv};
     \addlegendentry{High Temperature Model}}
     \only<4->{\addplot[only marks,mark=oplus*,violet,restrict x to domain=1.15:1.5] table[x=Alcohol-Tc, y=Alcohol-Ign] {figures/alcohol-models/model-data.csv};
     \addlegendentry{Low Temperature Alcohol}}
@@ -191,7 +192,7 @@ John Dec image
     \end{center}
 \end{frame}
 
-\begin{frame}{What problem am I trying to solve?}
+\begin{frame}{What phenomena am I trying to understand?}
     \begin{center}
         \only<1>{
             \includegraphics[height=0.8\textheight]{nbuoh-2014/nbuoh-2014}\\
