@@ -1,4 +1,7 @@
 \documentclass[tikz]{standalone}
+\usepackage{lmodern}
+\renewcommand*{\familydefault}{\sfdefault}
+\usepackage{sansmath}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \colorlet{darkgreen}{green!60!black}
@@ -34,12 +37,14 @@
 \def\pgfplots@drawtickgridlines@INSTALLCLIP@onorientedsurf#1{}
 \makeatother
 \usepackage{siunitx}
+\sisetup{detect-all,mode=text,math-rm=\mathsf, text-rm=\sffamily}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
 \pgfplotsset{
     compat=1.10,
     every axis/.append style={
         tick style = {color=black, semithick},
         minor tick style={thin},
-        title style={font=\Large},
+        title style={font=\Large\sansmath\sffamily},
     },
     axis line style={semithick},
     every axis plot/.append style={%
@@ -51,4 +56,8 @@
         draw=none,
         fill=none,
     },
+    tick label style = {font=\sansmath\sffamily},
+    every axis label = {font=\sansmath\sffamily},
+    legend style = {font=\sansmath\sffamily},
+    label style = {font=\sansmath\sffamily},
 }
