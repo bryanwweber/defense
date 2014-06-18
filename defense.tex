@@ -12,7 +12,8 @@
             \includegraphics[width=\textwidth]{2013USEnergy}
         \end{center}
     }
-    \only<2>{Could drive to the moon and back over 180 million times in a Tesla Model S with the amount of energy we use annually}
+    \only<2>{\begin{center}\includegraphics[height=0.8\textheight]{the-best-picture-ever}\end{center}}
+    %Could drive to the moon and back over 180 million times in a Tesla Model S with the amount of energy we use annually}
     % \begin{center}
         % \includegraphics[width=\textwidth]{me-to-moon}
     % \end{center}
@@ -30,10 +31,13 @@
 \end{frame}
 
 \begin{frame}{Better engines have higher efficiency and lower emissions}
-John Dec image
+    \begin{center}
+        \includegraphics[height=0.85\textheight]{john-dec-engine}\\
+        Reproduced from J.E. Dec, Proc. Combust. Inst. 32 (2009) 2727--2742
+    \end{center}
 \end{frame}
 
-\begin{frame}{Better fuels reduce emissions and eliminate dependence on fossil fuels}
+\begin{frame}{Better fuels reduce emissions and reduce dependence on fossil fuels}
     \begin{center}
         % \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{butanol-benefits}
         \begin{tikzpicture}
@@ -62,6 +66,30 @@ John Dec image
     \end{center}
 \end{frame}
 
+\begin{frame}{We need both solutions to make substantial progress}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item<+-> Selecting the ``best'' alternative fuel requires knowledge
+                    of the ``best'' engine, which depends on which
+                    alternative fuel is selected\ldots
+                \item<.-> Testing every fuel in every engine is prohibitively expensive
+                    and time consuming
+                \item<+-> Computer-aided design can be employed to create fuel-flexible
+                    engines \alert{if the fuel models are predictive}
+            \end{itemize}
+        \column{0.5\textwidth}
+            \centering
+            \only<2>{\setbeamercovered{transparent=15}}
+            \begin{tikzpicture}[scale=0.6]
+                \uncover<1>{\fill[even odd rule,red!30] circle (3.8) circle (3.2);
+                \arcarrow{3}{3.5}{4}{-80}{80}{5}{blue,draw=red!50!black,very thick}{Best Advanced Engine}{white}
+                \arcarrow{3}{3.5}{4}{100}{260}{5}{blue,draw=red!50!black,very thick}{Best Alternative Fuel}{white}}
+                \node<2> at (0,0) {\includegraphics[width=0.9\textwidth]{computer}};
+            \end{tikzpicture}
+    \end{columns}
+\end{frame}
+
 \begin{frame}
     \begin{center}
         {\Large What kind of research can we do to push these solutions along?}
@@ -77,7 +105,7 @@ John Dec image
     \end{textblock*}
 \end{frame}
 
-\begin{frame}{We can do engineering research on how the fuels will behave}
+\begin{frame}{We can do engineering research on how the fuels will affect engine performance}
     \begin{itemize}
         \item We need to know the physical properties
         \begin{itemize}
@@ -103,7 +131,7 @@ John Dec image
         \column{0.5\textwidth}
             Phenomenological Studies
             \begin{itemize}
-                \item Engine Studies
+                \item Cetane Number
                 \item Octane Number
                 \item \ldots
             \end{itemize}
@@ -111,7 +139,7 @@ John Dec image
         \column{0.5\textwidth}<2->
             Fundamental Studies
             \begin{itemize}
-                \item Ignition Delay
+                \item Flame speed
                 \item Product Speciation
                 \item \ldots
             \end{itemize}
@@ -122,13 +150,13 @@ John Dec image
         \item<3-> Experiments \tikzmark{2nd}
         \begin{itemize}[<4- | invisible@-3>]
             \item Engine experiments
-            \item \alert<7>{Homogeneous experiments}
+            \item Homogeneous experiments
             \item Heterogeneous experiments
         \end{itemize}
         \item<3->Modeling
         \begin{itemize}[<5- | invisible@-4>]
             \item Quantum chemical modeling
-            \item \alert<7>{Reaction mechanisms}
+            \item Reaction mechanisms
             \item Computational fluid dynamics
                 \tikzmark{4th}
         \end{itemize}
@@ -145,13 +173,12 @@ John Dec image
         \only<+>{{\Large How do alternative fuels react at engine-relevant conditions?}}
         \only<+>{
             \includegraphics[height=0.8\textheight]{nbuoh-2010/nbuoh-2010}\\
-            Until 2011, no one was aware that low-temperature chemistry would
-            be important for alcohol fuels!
+            Alternative fuels may undergo reactions that have not been described before
         }
     \end{center}
 \end{frame}
 
-\begin{frame}{What is low-temperature chemistry?}
+\begin{frame}
     \begin{center}
     \begin{tikzpicture}
     \begin{semilogyaxis}[
@@ -192,32 +219,26 @@ John Dec image
     \end{center}
 \end{frame}
 
-\begin{frame}{What phenomena am I trying to understand?}
+\begin{frame}{Updated models better predict the combustion phenomena}
     \begin{center}
         \only<1>{
             \includegraphics[height=0.8\textheight]{nbuoh-2014/nbuoh-2014}\\
-            With low-temperature reaction classes added, models can
-            better predict the ignition delay.
+            Sarathy et al.\ --- With low temperature reactions\\
+            Harper et al.\ --- Without low temperature reactions
+        }
+        \only<2>{
+            \includegraphics[height=0.8\textheight]{mit-osswald-flame}\\
+            Reproduced from Hansen et al.\ Combust. Flame 160 (2013) 2343--2351
+        }
+        \only<3>{
+            \includegraphics[width=\textwidth]{llnl-osswald-flame}\\
+            Reproduced from Sarathy et al.\ Combust. Flame 159 (2012) 2028--2055
+        }
+        \only<4>{
+            \includegraphics[width=\textwidth]{llnl-mit-paths}\\
+            Reproduced from Hansen et al.\ Combust. Flame 160 (2013) 2343--2351
         }
     \end{center}
-    \only<2>{
-        \begin{columns}
-            \column{0.45\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{ibuoh-30o2sim}\\
-                Weber et al. 8th US National Combustion Meeting 2013
-            \column{0.45\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{ibuoh-30o2sim-sar}\\
-                Sarathy et al. Combust. Flame 2012
-        \end{columns}
-        \vspace{0.5cm}
-        \begin{center}
-            There is still some critical information missing from our
-            understanding of high-pressure, low-temperature ignition
-            of alternative fuels
-        \end{center}
-    }
 \end{frame}
 
 \section{Experimental Apparatuses}
@@ -274,7 +295,24 @@ John Dec image
     \end{columns}
 \end{frame}
 
-\section{Results, Butanol Isomers}
+\section{Butanol Isomers}
+
+\begin{frame}{Why butanol?}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item There are four isomers of butanol
+                \item Butanol can be produced from bio-based and waste sources
+                \item Butanol is the smallest alcohol with each type of C-O bond
+            \end{itemize}
+        \column{0.5\textwidth}
+            \centering
+            \includegraphics[height=0.2\textheight]{1-butanol}\par
+            \includegraphics[height=0.2\textheight]{2-butanol}\par
+            \includegraphics[height=0.2\textheight]{t-butanol}\par
+            \includegraphics[height=0.2\textheight]{iso-butanol}
+    \end{columns}
+\end{frame}
 
 \begin{frame}{The reactivity of the butanol isomers depends on the pressure}
     \only<1>{
@@ -290,7 +328,7 @@ John Dec image
     \end{center}
 \end{frame}
 
-\begin{frame}{The reactivity trend can be predicted by a detailed understanding of the chemistry}
+\begin{frame}{The reactivity trend can be \alert{predicted} by a detailed understanding of the chemistry}
     \begin{center}
         \includegraphics<1>[height=0.85\textheight]{buoh-30sim}
     \end{center}
@@ -302,7 +340,22 @@ John Dec image
     \end{columns}
 \end{frame}
 
-\section{Results, Methylcyclohexane}
+\section{Methylcyclohexane}
+
+\begin{frame}{Why methylcyclohexane?}
+    \begin{itemize}
+        \item Methylcyclohexane (MCH) is an important component of fuels
+            produced from alternative petroleum sources, such as shale oil
+        \item Models of real transportation fuels are difficult to 
+            construct and use due to the chemical complexity of the fuels
+        \item Surrogate models use a limited number of components to 
+            represent the chemical and physical properties of the real fuel
+        \item Models need to be developed and validated for the neat 
+            components as well as for their blends
+        \item MCH is a component in many surrogate transportation fuel
+            formulations
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{Methylcyclohexane ignition}
     \begin{columns}
@@ -317,6 +370,10 @@ John Dec image
                 Weber et al.\ Combust. Flame 2014
         }
     \end{columns}
+    \begin{center}
+        Reaction mechanisms for MCH are improving but something is still
+        missing
+    \end{center}
     % \begin{center}
         % \includegraphics<+>[height=0.85\textheight]{mch-energy}
     % \end{center}
@@ -344,7 +401,7 @@ John Dec image
                 \only<4>{\tikzmark{mvk}\includegraphics[height=0.15\textheight]{methyl-vinyl-ketone}}
         \end{columns}
         \begin{tikzpicture}[overlay,remember picture,->,ultra thick]
-        \draw<2-3> ($(mch)+(0,0.5)$) --      (0.3,7.3);
+        \draw<2-3> ($(mch)+(0,0.5)$) --     (0.3,7.3);
         \draw<3> ($(mchene-2)+(0,0.25)$) -- (0.75,3);
         \draw<3> ($(mchene-3)+(0,0.25)$) -- (0.85,3);
         \draw<3> ($(menech)+(0,0.25)$) --   (1,1.9);
@@ -362,10 +419,49 @@ John Dec image
 
 \begin{frame}{Summary}
     \begin{itemize}
-        \item We need a better understanding of the combustion properties of fuels we use now, fuels for the medium-term, and fuels for the long-term especially under engine-relevant conditions
-        \item Using this understanding, we need to develop models that can predict the combustion behavior of new fuels in new engines
-        \item My dissertation did x y z to advance these causes
+        \item We need a better understanding of the fundamental
+            combustion properties of alternative fuels, especially under 
+            engine-relevant conditions
+        \item Using this understanding, we need to develop models that 
+            can predict the combustion behavior of new fuels in new engines
+        \item Through experimental studies and detailed chemical kinetic
+            analysis, my work has extended the state-of-the-art in our
+            understanding of high-pressure ignition chemistry of alternative
+            fuels
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Future work}
+    \only<1>{
+        \begin{itemize}
+            \item Calibration for more species of importance
+            \item Resolve discrepancies at early sampling times
+            \item Consider more conditions and more fuels
+        \end{itemize}
+    }
+    \only<2>{
+        \begin{columns}
+            \column{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{ibuoh-30o2sim}\\
+                Weber et al. 8th US National Combustion Meeting 2013
+            \column{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{ibuoh-30o2sim-sar}\\
+                Sarathy et al. Combust. Flame 2012
+        \end{columns}
+        \vspace{0.5cm}
+        \begin{center}
+            There is still some critical information missing from our
+            understanding of high-pressure, low-temperature ignition
+            of alternative fuels
+        \end{center}
+    }
+\end{frame}
+
+\begin{frame}
+    Thank you!\\
+    Questions?
 \end{frame}
 
 \end{document}
