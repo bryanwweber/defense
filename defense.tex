@@ -76,4 +76,28 @@
     \end{columns}
 \end{frame}
 
+\begin{frame}{We need both solutions to make substantial progress}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item<+-> Selecting the ``best'' alternative fuel requires knowledge
+                    of the ``best'' engine, which depends on which
+                    alternative fuel is selected\ldots
+                \item<.-> Testing every fuel in every engine is prohibitively expensive
+                    and time consuming
+                \item<+-> Computer-aided design can be employed to create fuel-flexible
+                    engines \alert{if the fuel models are predictive under LTC conditions}
+            \end{itemize}
+        \column{0.5\textwidth}
+            \centering
+            \only<2>{\setbeamercovered{transparent=15}}
+            \begin{tikzpicture}[scale=0.6]
+                \uncover<1>{\fill[even odd rule,red!30] circle (3.8) circle (3.2);
+                \arcarrow{3}{3.5}{4}{-80}{80}{5}{blue,draw=red!50!black,very thick}{Best Advanced Engine}{white}
+                \arcarrow{3}{3.5}{4}{100}{260}{5}{blue,draw=red!50!black,very thick}{Best Alternative Fuel}{white}}
+                \node<2> at (0,0) {\includegraphics[width=0.87\textwidth]{computer}};
+            \end{tikzpicture}
+    \end{columns}
+\end{frame}
+
 \end{document}
