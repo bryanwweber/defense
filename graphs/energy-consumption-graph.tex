@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        xtick={0,1,...,7},
+        xticklabels={
+            {Petroleum},
+            {Natural Gas},
+            {Coal},
+            {Nuclear},
+            {Hydropower},
+            {Biomass},
+            {Renewable Energy},
+            {Other},
+        },
+        x tick label style={
+            text height=2ex,
+            rotate=45,
+            anchor=north east,
+            font=\footnotesize,
+            yshift=10pt,
+            align=right,
+        },
+        ybar,
+        ylabel={Percent},
+        title={United States Energy Consumption by Fuel Source},
+        height=0.8\textheight,
+        width=\textwidth,
+        area legend,
+    ]
+        \pgfmathsetmacro\totaltwentythirteen{96.49}
+        \addplot coordinates {
+            (0,35.97/\totaltwentythirteen*100)
+            (1,26.22/\totaltwentythirteen*100)
+            (2,18.46/\totaltwentythirteen*100)
+            (3,7.93/\totaltwentythirteen*100)
+            (4,2.59/\totaltwentythirteen*100)
+            (5,2.68/\totaltwentythirteen*100)
+            (6,2.26/\totaltwentythirteen*100)
+            (7,0.39/\totaltwentythirteen*100)
+        };
+        \pgfmathsetmacro\totaltwentyforty{106.31}
+        \addplot coordinates {
+            (0,35.35/\totaltwentyforty*100)
+            (1,32.32/\totaltwentyforty*100)
+            (2,18.75/\totaltwentyforty*100)
+            (3,8.49/\totaltwentyforty*100)
+            (4,2.90/\totaltwentyforty*100)
+            (5,4.26/\totaltwentyforty*100)
+            (6,3.89/\totaltwentyforty*100)
+            (7,0.35/\totaltwentyforty*100)
+        };
+        \legend{2013,2040}
+        \node[anchor=west,align=left] at (axis cs:3.5,20) {Data from EIA Annual\\Energy Report 2014};
+    \end{axis}
+\end{tikzpicture}
