@@ -7,10 +7,10 @@
 \begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-    ylabel={Intensity, A.U.},
+    ylabel={Intensity, A.U./$10^4$},
     xlabel={Time, \si{\minute}},
     table/x index={0},
-    table/y index={1},
+    table/y expr=\thisrowno{1}/1E4,
     every axis plot/.append style={
         no markers,
     },
@@ -18,41 +18,46 @@
     xmin=8, xmax=40,
     minor x tick num=4,
     minor y tick num=4,
-    ymin=-2E3, ymax=5E4,
+    ymin=-0.2, ymax=5,
     every axis legend/.append style={
-        at = {(axis cs:12,4.9E4)},
+        at = {(axis cs:12,4.9)},
         anchor = north west,
     },
     cycle list name=tic,
     /tikz/line join=bevel,
+    title={Just prior to EOC},
+    % title={In the first-stage induction period},
+    % title={At the first-stage ignition},
+    % title={After the first-stage ignition},
+    % title={After overall ignition},
 ]
-% \addplot table {2014-06-07-1328-tic-bc.txt};
+\addplot table {2014-06-07-1328-tic-bc.txt};
 % \addplot table {2014-06-08-1835-tic-bc.txt};
 % \addplot table {2014-06-06-2032-tic-bc.txt};
-\addplot table {2014-06-08-1514-tic-bc.txt};
+% \addplot table {2014-06-08-1514-tic-bc.txt};
 % \addplot table {2014-06-06-1755-tic-bc.txt};
 \legend{{Case 1}, {Case 2}, {Case 3}, {Case 4}, {Case 5}};
-\begin{scope}[every node/.style={font=\tiny}]
-\node at (axis cs: 8.610,0) {1};
-\node at (axis cs: 8.689,0) {2};
-\node at (axis cs: 8.875,0) {3};
-\node at (axis cs: 8.977,0) {4};
-\node at (axis cs: 9.370,0) {5};
-\node at (axis cs: 9.607,0) {6};
-\node at (axis cs: 9.813,0) {7};
-\node at (axis cs:10.603,0) {8};
-\node at (axis cs:10.747,0) {9};
-\node at (axis cs:10.927,0) {10};
-\node at (axis cs:11.508,0) {11};
-\node at (axis cs:13.036,0) {12};
-\node at (axis cs:13.606,0) {13};
-\node at (axis cs:21.903,0) {14};
-\node at (axis cs:28.329,0) {15};
-\node at (axis cs:30.730,0) {16};
-\node at (axis cs:30.883,0) {17};
-\node at (axis cs:31.194,0) {18};
-\node at (axis cs:37.289,0) {19};
-\end{scope}
+% \begin{scope}[every node/.style={font=\tiny}]
+% \node at (axis cs: 8.610,0) {1};
+% \node at (axis cs: 8.689,0) {2};
+% \node at (axis cs: 8.875,0) {3};
+% \node at (axis cs: 8.977,0) {4};
+% \node at (axis cs: 9.370,0) {5};
+% \node at (axis cs: 9.607,0) {6};
+% \node at (axis cs: 9.813,0) {7};
+% \node at (axis cs:10.603,0) {8};
+% \node at (axis cs:10.747,0) {9};
+% \node at (axis cs:10.927,0) {10};
+% \node at (axis cs:11.508,0) {11};
+% \node at (axis cs:13.036,0) {12};
+% \node at (axis cs:13.606,0) {13};
+% \node at (axis cs:21.903,0) {14};
+% \node at (axis cs:28.329,0) {15};
+% \node at (axis cs:30.730,0) {16};
+% \node at (axis cs:30.883,0) {17};
+% \node at (axis cs:31.194,0) {18};
+% \node at (axis cs:37.289,0) {19};
+% \end{scope}
 \end{axis}
 \end{tikzpicture}
 \end{document}
