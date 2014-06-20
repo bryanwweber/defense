@@ -1,0 +1,35 @@
+% arara: lualatex
+\input{../figure-preamble.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    ylabel={Pressure, \si{bar}},
+    xlabel={Time, \si{\milli\second}},
+    xmin=-10,xmax=70,
+    ymin=18,ymax=45,
+    ytick={15,20,...,45},
+    minor y tick num=4,
+    xtick={-10,0,...,70},
+    minor x tick num=4,
+    cycle list={red,black,blue,darkgreen},
+    title={\textit{s}-Butanol/O$_2$/N$_2$, $\phi=1.0$, $P_C=30\,\si{\bar}$},
+    % legend entries={{$P(t)$, Non-Reactive},{$P(t)$, Reactive}},
+    legend style={
+        legend pos=north west,
+    },
+    /tikz/line join=bevel,
+]
+\addplot table[x expr=\thisrowno{0}*1000-33.25,y index=3,col sep=comma] {export.csv};
+\addplot[restrict x to domain=-10:40] table[x expr=\thisrowno{0}*1000,y index=1] {Tc_803K_P0_1.6411_T0_408K_pressure.txt};
+\addplot table[x expr=\thisrowno{0}*1000-33.25,y index=3,col sep=comma] {export-2.csv};
+\addplot table[x expr=\thisrowno{0}*1000,y index=1] {Tc_770K_P0_1.9882_T0_408K_pressure.txt};
+\begin{scope}[every node/.append style={font=\sansmath\sffamily,anchor=south,rotate=90}]
+\node[darkgreen] at (axis cs:63.9,39) {$T_C=770\,\si{\kelvin}$};
+\node[black] at (axis cs:37.70,39) {$T_C=803\,\si{\kelvin}$};
+\node[anchor=north,rotate=-90] at (axis cs:30,23) {Non-Reactive};
+\end{scope}
+\draw[->,semithick,red] (axis cs:30,23) -- (axis cs:32,27);
+\draw[->,semithick,blue] (axis cs:30,23) -- (axis cs:60,26);
+\end{axis}
+\end{tikzpicture}
+\end{document}
