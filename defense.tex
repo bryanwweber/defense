@@ -256,4 +256,38 @@
     \end{center}
 \end{frame}
 
+\begin{frame}{Many improvements to the kinetic model for MCH were made}
+    \only<1,3,5>{
+    \setbeamercovered{transparent=15}
+    \begin{itemize}
+        \item<1> The C$_1$--C$_4$, aromatics, and cyclohexane chemistry have been updated
+        \item<1> Important fuel decomposition reaction rates have been updated based on
+            experimental measurements and quantum chemical calculations
+        \item<1> These changes have improved prediction of the overall ignition
+            delay substantially
+        \item<uncover@3 | invisible@1> The activation energy of an important class of decomposition
+            reactions of MCH was increased to match the value used in the base chemistry
+        \item<visible@5> New pathways involving species with unsaturated rings were added
+            to enable prediction of species such as methylcyclohexenes
+    \end{itemize}
+    }
+    \only<2>{
+        \begin{columns}
+                \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{mittal-mch}\par
+                    Mittal and Sung Combust.\ Flame 2009
+                \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=\textwidth]{mch-model-1/mch-model-1}\par
+                    Weber et al.\ Combust.\ Flame 2014
+        \end{columns}
+    }
+    \only<4>{
+        \begin{center}
+            \includegraphics[height=0.85\textheight]{mch-energy}
+        \end{center}
+    }
+\end{frame}
+
 \end{document}
